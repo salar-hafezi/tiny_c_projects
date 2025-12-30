@@ -14,7 +14,6 @@ int main(int argc, char *argv[]) {
   time_t now;
   struct tm *clock;
   short hour;
-  char *time_of_day = NULL;
   char time_string[64];
   char *moon_phase = NULL;
   char **sayings = NULL;
@@ -25,7 +24,7 @@ int main(int argc, char *argv[]) {
   time(&now);
   clock = localtime(&now);
   hour = clock->tm_hour;
-  get_time_of_day(hour, time_of_day);
+  const char *time_of_day = get_time_of_day(hour);
   strftime(time_string, 64, "Today is %A, %B %d, %Y%nIt is %r%n", clock);
   moon_phase = get_moon_phase_string(clock);
 

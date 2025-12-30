@@ -6,19 +6,19 @@
 #define BSIZE 256
 #define LSIZE 100
 
-void get_time_of_day(short hour, char *result) {
+const char *get_time_of_day(short hour) {
   if (hour < 12)
-    result = "Morning";
+    return "Morning";
   else if (hour < 17)
-    result = "Afternoon";
+    return "Afternoon";
   else
-    result = "Evening";
+    return "Evening";
 }
 
 short read_pithy(const char *file_name, char ***list_base) {
   FILE *fp;
   char buffer[BSIZE];
-  char *r, *entry;
+  char *entry;
   short items;
   char **base;
 
