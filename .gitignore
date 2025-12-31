@@ -1,4 +1,7 @@
 *.o
 lib/
 dist/
+.DS_store
+.cache/
+compile_commands.json
 
